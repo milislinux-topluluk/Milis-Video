@@ -85,7 +85,7 @@ bool VideoPreview::extractImages(int time) {
 	int length = i.length;
 
 	if (length == 0) {
-        if (error_message.isEmpty()) error_message = QString(tr("The length of the video is 0"));
+        if (error_message.isEmpty()) error_message = QString(tr("Videonun uzunluğu 0"));
 		return false;
 	}
 
@@ -94,7 +94,7 @@ bool VideoPreview::extractImages(int time) {
 	if (!d.exists(output_dir)) {
 		if (!d.mkpath(output_dir)) {
 			qDebug("VideoPreview::extractImages: error: can't create '%s'", full_output_dir.toUtf8().constData());
-            error_message = QString(tr("The temporary directory (%1) can't be created").arg(full_output_dir));
+            error_message = QString(tr("Geçici dizin (%1) oluşturulamıyor").arg(full_output_dir));
 			return false;
 		}
 	}
@@ -114,7 +114,7 @@ bool VideoPreview::extractImages(int time) {
 
     QString frame_picture = full_output_dir + "/" + framePicture();
     if (!QFile::exists(frame_picture)) {
-        error_message = QString(tr("The file %1 doesn't exist").arg(frame_picture));
+        error_message = QString(tr("%1 dosyası mevcut değil").arg(frame_picture));
 //        qDebug() << "error_message=" << error_message;//error_message= "文件 /tmp/milis_video_preview/00000001.jpg 不存在"
         return false;
     }
@@ -178,7 +178,7 @@ bool VideoPreview::runPlayer(int seek, double aspect_ratio) {
 	p.start(mplayer_bin, args);
 	if (!p.waitForFinished()) {
         qDebug() << "VideoPreview::runMplayer: error running process";
-        error_message = QString(tr("The mplayer process didn't run"));
+        error_message = QString(tr("Mplayer işlemi çalışmadı"));
 		return false;
 	}
 
@@ -211,7 +211,7 @@ VideoInfo VideoPreview::getInfo(const QString & mplayer_path, const QString & fi
 	VideoInfo i;
 
 	if (filename.isEmpty()) {
-        error_message = QString(tr("No filename"));
+        error_message = QString(tr("Dosya Adı Yok"));
 		return i;
 	}
 
@@ -287,7 +287,7 @@ VideoInfo VideoPreview::getInfo(const QString & mplayer_path, const QString & fi
 		}
 	} else {
 		qDebug("VideoPreview::getInfo: error: process didn't start");
-        error_message = QString(tr("The mplayer process didn't start while trying to get info about the video"));
+        error_message = QString(tr("Video hakkında bilgi edinmeye çalışırken mplayer işlemi başlamadı"));
 	}
 
 //	qDebug("VideoPreview::getInfo: filename: '%s'", i.filename.toUtf8().constData());

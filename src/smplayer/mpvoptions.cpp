@@ -105,7 +105,7 @@ void MPVProcess::addVFIfAvailable(const QString & vf, const QString & value) {
 }
 
 void MPVProcess::messageFilterNotSupported(const QString & filter_name) {
-    QString text = tr("the '%1' filter is not supported by mpv").arg(filter_name);
+    QString text = tr("'%1' filtresi mpv tarafından desteklenmiyor").arg(filter_name);
     writeToStdin(QString("show_text \"%1\" 3000").arg(text));
 }
 

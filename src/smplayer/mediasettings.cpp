@@ -171,7 +171,7 @@ QString MediaSettings::aspectToString(Aspect aspect) {
 	QString asp_name;
 
 	switch (aspect) {
-		case MediaSettings::AspectNone: asp_name = QObject::tr("disabled", "aspect_ratio"); break;
+		case MediaSettings::AspectNone: asp_name = QObject::tr("Kapalı", "aspect_ratio"); break;
 		case MediaSettings::Aspect43: asp_name = "4:3"; break;
 		case MediaSettings::Aspect169: asp_name = "16:9"; break;
 		case MediaSettings::Aspect149: asp_name = "14:9"; break;
@@ -182,8 +182,8 @@ QString MediaSettings::aspectToString(Aspect aspect) {
 		case MediaSettings::Aspect32: asp_name = "3:2"; break;
 		case MediaSettings::Aspect1410: asp_name = "14:10"; break;
 		case MediaSettings::Aspect118: asp_name = "11:8"; break;
-		case MediaSettings::AspectAuto: asp_name = QObject::tr("auto", "aspect_ratio"); break;
-		default: asp_name = QObject::tr("unknown", "aspect_ratio");
+		case MediaSettings::AspectAuto: asp_name = QObject::tr("Oto", "aspect_ratio"); break;
+		default: asp_name = QObject::tr("Bilinmeyen", "aspect_ratio");
 	}
 
 	return asp_name;
