@@ -1,19 +1,17 @@
-kylin-video
+milis-video
 ===========
 
-Kylin Video utilizes MPV and MPlayer as background play engine (use MPV by default). Its GUI front end is written by Gt5. Plus, it supports both x86 and ARM platform. As a powerful video player, Kylin Video supports most of the audio and video formats. Functions of shortcut keys/ preview/ screenshot/ sound settings/ subtitles and so on are provided. Users can even customize settings as they like.
+Milis Video, arka planda oynatma motoru olarak MPV ve MPlayer'dan yararlanır (varsayılan olarak MPV'yi kullanın). GUI arayüz Gt5 ile yazılmıştır. Hem x86 hem de ARM platformunu destekler. Güçlü bir video oynatıcı olarak, Milis Video çoğu ses ve video biçimini destekler. Kısayol tuşlarının işlevleri / önizleme / ekran görüntüsü / ses ayarları / altyazılar vb. destekler. Kullanıcılar ayarları istedikleri gibi özelleştirebilirler.
 
 
-Installation
+Kurulum
 ============
 
 qmake
 make
 sudo make install
 
+veya 
 
-How to report bugs
-==================
+mps kur milis-video 
 
-Bugs should be report to the kylin-video bug tracking system:
-    https://github.com/ukui/kylin-video/issues
