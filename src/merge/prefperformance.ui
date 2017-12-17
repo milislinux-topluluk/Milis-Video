@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Cache</string>
+    <string>Önbellek</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -46,7 +46,7 @@
       <item>
        <widget class="QLabel" name="cache_local_label">
         <property name="text">
-         <string>Cache for local files:</string>
+         <string>Yerel dosyalar için önbellek:</string>
         </property>
         <property name="buddy">
          <cstring>cache_files_spin</cstring>
@@ -74,7 +74,7 @@
       <item>
        <widget class="QLabel" name="cache_streams_label">
         <property name="text">
-         <string>Cache for streams:</string>
+         <string>Akış için önbellek:</string>
         </property>
         <property name="buddy">
          <cstring>cache_streams_spin</cstring>
@@ -109,7 +109,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Decode</string>
+    <string>Kod Çözme</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
@@ -132,7 +132,7 @@
       <item>
        <widget class="QLabel" name="thread_label">
         <property name="text">
-         <string>Threads for decoding (MPEG-1/2 and H.264 only):</string>
+         <string>Kod çözme konuları (yalnızca MPEG-1/2 ve H.264):</string>
         </property>
        </widget>
       </item>
@@ -169,7 +169,7 @@
       <item>
        <widget class="QLabel" name="hd_decode_label">
         <property name="text">
-         <string>Hardware decoding</string>
+         <string>Donanım şifre çözme</string>
         </property>
        </widget>
       </item>

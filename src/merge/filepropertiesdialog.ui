@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Milis Video - Preferences</string>
+   <string>Milis Video - Tercihler</string>
   </property>
   <widget class="QWidget" name="title_widget" native="true">
    <property name="geometry">
@@ -70,7 +70,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Properties</string>
+     <string>Seçenekler</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -121,7 +121,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>&amp;Select the demuxer that will be used for this file:</string>
+      <string>&amp;Bu dosya için kullanılacak demuxeri seçin::</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -150,7 +150,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>&amp;Reset</string>
+      <string>&amp;Sıfırla</string>
      </property>
     </widget>
     <zorder>demuxer_listbox</zorder>
@@ -178,7 +178,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>&amp;Select the video codec:</string>
+      <string>&amp;Video kodek seçin:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -197,7 +197,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>&amp;Reset</string>
+      <string>&amp;Sıfırla</string>
      </property>
     </widget>
    </widget>
@@ -222,7 +222,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>&amp;Select the audio codec:</string>
+      <string>&amp;Audio kodek seçin:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -241,7 +241,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Reset</string>
+      <string>Sıfırla</string>
      </property>
     </widget>
    </widget>
@@ -256,7 +256,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Apply</string>
+    <string>Uygula</string>
    </property>
   </widget>
   <widget class="QPushButton" name="okButton">
@@ -269,7 +269,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>OK</string>
+    <string>Tamam</string>
    </property>
   </widget>
   <widget class="QPushButton" name="cancelButton">
@@ -282,7 +282,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Cancel</string>
+    <string>İptal</string>
    </property>
   </widget>
  </widget>

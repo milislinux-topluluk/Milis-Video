@@ -23,13 +23,13 @@
     </rect>
    </property>
    <property name="title">
-    <string>Screenshots</string>
+    <string>Ekran Resmi</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QCheckBox" name="use_screenshots_check">
       <property name="text">
-       <string>Enable screenshots</string>
+       <string>Ekran resmini etkinleştir</string>
       </property>
      </widget>
     </item>
@@ -41,7 +41,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Folder:</string>
+         <string>Klasör:</string>
         </property>
         <property name="wordWrap">
          <bool>false</bool>
@@ -68,7 +68,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Template:</string>
+         <string>Şablon:</string>
         </property>
         <property name="buddy">
          <cstring>screenshot_template_edit</cstring>
@@ -88,7 +88,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Format:</string>
+         <string>Biçim:</string>
         </property>
         <property name="buddy">
          <cstring>screenshot_format_combo</cstring>

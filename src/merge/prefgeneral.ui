@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Pause when minimized</string>
+    <string>Simge durumunda duraklat</string>
    </property>
   </widget>
   <widget class="QRadioButton" name="mplayer_radioButton">
@@ -62,7 +62,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Playback engine:</string>
+    <string>Oynatma motoru:</string>
    </property>
    <property name="buddy">
     <cstring>cache_files_spin</cstring>
@@ -78,7 +78,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Preview when video is playing</string>
+    <string>Video oynatılırken önizleme yapın</string>
    </property>
   </widget>
  </widget>

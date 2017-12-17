@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Enable postprocessing by default</string>
+    <string>Post işleme işlemini varsayılan olarak etkinleştir</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="use_slices_check">
@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Draw video using slices</string>
+    <string>Dilimleri kullanarak video çiz</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="direct_rendering_check">
@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Direct rendering</string>
+    <string>Doğrudan işleme</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="double_buffer_check">
@@ -62,7 +62,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Double buffering</string>
+    <string>Çift tamponlama</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="eq2_check">
@@ -75,7 +75,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Use software video equalizer</string>
+    <string>Yazılım video ekolayzerini kullanın</string>
    </property>
   </widget>
   <widget class="QComboBox" name="vo_combo">
@@ -107,7 +107,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Output driver:</string>
+    <string>Çıktı sürücüsü:</string>
    </property>
    <property name="wordWrap">
     <bool>false</bool>

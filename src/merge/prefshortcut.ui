@@ -47,7 +47,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>Here you can change any key shortcut. To do it double click or press enter over a shortcut cell. </string>
+       <string>Burada tuş kısayolunu değiştirebilirsiniz. Bunu yapmak için, kısayol üzerine çift tıklayın veya enter tuşuna basın. </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignVCenter</set>

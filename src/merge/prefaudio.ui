@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Volume</string>
+    <string>Ses</string>
    </property>
    <layout class="QVBoxLayout">
     <property name="leftMargin">
@@ -41,7 +41,7 @@
     <item>
      <widget class="QCheckBox" name="global_volume_check">
       <property name="text">
-       <string>Global volume</string>
+       <string>Küresel ses</string>
       </property>
      </widget>
     </item>
@@ -65,7 +65,7 @@
       <item>
        <widget class="QCheckBox" name="softvol_check">
         <property name="text">
-         <string>Use software volume control</string>
+         <string>Yazılım ses kontrolü kullan</string>
         </property>
        </widget>
       </item>
@@ -88,7 +88,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Max. Amplification:</string>
+         <string>Maks. Amplifikasyon:</string>
         </property>
         <property name="wordWrap">
          <bool>false</bool>
@@ -116,7 +116,7 @@
     <item>
      <widget class="QCheckBox" name="volnorm_check">
       <property name="text">
-       <string>Volume normalization by default</string>
+       <string>Varsayılan olarak birim normalleştirme</string>
       </property>
      </widget>
     </item>
@@ -132,7 +132,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Synchronization</string>
+    <string>Senkronizasyon</string>
    </property>
    <layout class="QVBoxLayout" name="_3">
     <property name="leftMargin">
@@ -152,7 +152,7 @@
       <item>
        <widget class="QCheckBox" name="autosync_check">
         <property name="text">
-         <string>Audio/video auto synchronization</string>
+         <string>Ses/video otomatik senkronizasyon</string>
         </property>
        </widget>
       </item>
@@ -178,7 +178,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Factor:</string>
+         <string>Faktör:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -224,7 +224,7 @@
     <item>
      <widget class="QLabel" name="ao_label">
       <property name="text">
-       <string>Output driver:</string>
+       <string>Çıkış sürücüsü:</string>
       </property>
       <property name="wordWrap">
        <bool>false</bool>
@@ -290,7 +290,7 @@
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>Channels by default:</string>
+       <string>Varsayılan kanallar:</string>
       </property>
       <property name="buddy">
        <cstring>channels_combo</cstring>

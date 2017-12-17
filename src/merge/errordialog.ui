@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MPlayer Error</string>
+   <string>MPlayer Hata</string>
   </property>
   <widget class="QPushButton" name="okBtn">
    <property name="geometry">
@@ -35,7 +35,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>OK</string>
+    <string>Tamam</string>
    </property>
   </widget>
   <widget class="QPushButton" name="closeBtn">
@@ -61,7 +61,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>MPlayer Error</string>
+    <string>MPlayer Hata</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -77,7 +77,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>icon</string>
+    <string>simge</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -102,7 +102,7 @@
     </sizepolicy>
    </property>
    <property name="text">
-    <string>Oops, something wrong happened</string>
+    <string>Hata! Bir şey oldu</string>
    </property>
   </widget>
   <widget class="QLabel" name="text_label">
@@ -127,7 +127,7 @@
     </size>
    </property>
    <property name="text">
-    <string>Error</string>
+    <string>Hata</string>
    </property>
    <property name="wordWrap">
     <bool>true</bool>
@@ -156,7 +156,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Show log</string>
+    <string>Günlüğü göster</string>
    </property>
    <property name="checkable">
     <bool>true</bool>

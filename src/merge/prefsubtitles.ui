@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Autoload</string>
+    <string>Oto. Yükle</string>
    </property>
    <layout class="QGridLayout">
     <property name="leftMargin">
@@ -60,7 +60,7 @@
     <item row="0" column="0">
      <widget class="QLabel" name="autoload_label">
       <property name="text">
-       <string>Autoload subtitles files (*.srt, *.sub...):</string>
+       <string>Altyazı dosyalarını oto. yükle (*.srt, *.sub...):</string>
       </property>
       <property name="wordWrap">
        <bool>false</bool>
@@ -74,17 +74,17 @@
      <widget class="QComboBox" name="font_autoload_combo">
       <item>
        <property name="text">
-        <string>Same name as movie</string>
+        <string>Filmle aynı adı</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>All subs containing movie name</string>
+        <string>Film adı içeren tüm alt bölümler</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>All subs in directory</string>
+        <string>Dizindeki tüm alt dizinler</string>
        </property>
       </item>
      </widget>
@@ -101,7 +101,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Encoding</string>
+    <string>Kodlama</string>
    </property>
    <layout class="QVBoxLayout" name="_2">
     <item>
@@ -124,7 +124,7 @@
       <item>
        <widget class="QLabel" name="encoding_label">
         <property name="text">
-         <string>Default subtitle encoding:</string>
+         <string>Varsayılan altyazı kodlaması:</string>
         </property>
         <property name="wordWrap">
          <bool>false</bool>
@@ -173,7 +173,7 @@
       <item>
        <widget class="QCheckBox" name="use_enca_check">
         <property name="text">
-         <string>Try to autodetect for this language:</string>
+         <string>Bu dil için otomatik algılamaya çalışın:</string>
         </property>
        </widget>
       </item>
