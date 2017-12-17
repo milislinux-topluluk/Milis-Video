@@ -38,40 +38,60 @@
 **
 ****************************************************************************/
 
-#ifndef QTLOCALPEER_H
-#define QTLOCALPEER_H
+#ifndef QTLOCKEDFILE_H
+#define QTLOCKEDFILE_H
 
-#include <QLocalServer>
-#include <QLocalSocket>
-#include <QDir>
+#include <QFile>
+#ifdef Q_OS_WIN
+#include <QVector>
+#endif
 
-#include "qtlockedfile.h"
+#if defined(Q_OS_WIN)
+#  if !defined(QT_QTLOCKEDFILE_EXPORT) && !defined(QT_QTLOCKEDFILE_IMPORT)
+#    define QT_QTLOCKEDFILE_EXPORT
+#  elif defined(QT_QTLOCKEDFILE_IMPORT)
+#    if defined(QT_QTLOCKEDFILE_EXPORT)
+#      undef QT_QTLOCKEDFILE_EXPORT
+#    endif
+#    define QT_QTLOCKEDFILE_EXPORT __declspec(dllimport)
+#  elif defined(QT_QTLOCKEDFILE_EXPORT)
+#    undef QT_QTLOCKEDFILE_EXPORT
+#    define QT_QTLOCKEDFILE_EXPORT __declspec(dllexport)
+#  endif
+#else
+#  define QT_QTLOCKEDFILE_EXPORT
+#endif
 
-class QtLocalPeer : public QObject
+namespace QtLP_Private {
+
+class QT_QTLOCKEDFILE_EXPORT QtLockedFile : public QFile
 {
-    Q_OBJECT
-
 public:
-    QtLocalPeer(QObject *parent = 0, const QString &appId = QString());
-    bool isClient();
-    bool sendMessage(const QString &message, int timeout);
-    QString applicationId() const
-        { return id; }
+    enum LockMode { NoLock = 0, ReadLock, WriteLock };
 
-Q_SIGNALS:
-    void messageReceived(const QString &message);
+    QtLockedFile();
+    QtLockedFile(const QString &name);
+    ~QtLockedFile();
 
-protected Q_SLOTS:
-    void receiveConnection();
+    bool open(OpenMode mode);
 
-protected:
-    QString id;
-    QString socketName;
-    QLocalServer* server;
-    QtLP_Private::QtLockedFile lockFile;
+    bool lock(LockMode mode, bool block = true);
+    bool unlock();
+    bool isLocked() const;
+    LockMode lockMode() const;
 
 private:
-    static const char* ack;
-};
+#ifdef Q_OS_WIN
+    Qt::HANDLE wmutex;
+    Qt::HANDLE rmutex;
+    QVector<Qt::HANDLE> rmutexes;
+    QString mutexname;
 
-#endif // QTLOCALPEER_H
+    Qt::HANDLE getMutexHandle(int idx, bool doCreate);
+    bool waitMutex(Qt::HANDLE mutex, bool doBlock);
+
+#endif
+    LockMode m_lock_mode;
+};
+}
+#endif
