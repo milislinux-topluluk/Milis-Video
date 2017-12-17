@@ -631,9 +631,9 @@ void BaseGui::createActionsAndMenus() {
 //    recentfiles_menu->menuAction()->setIcon(QPixmap(":/res/delete.png"));
 
     playMenu = new QMenu(this);
-    playMenu->menuAction()->setText(tr("Çalma Kontrolü"));
+    playMenu->menuAction()->setText(tr("Oynatma Kontrolü"));
     control_menu = new QMenu(this);
-    control_menu->menuAction()->setText(tr("İleri ve geri sarma"));//快进快退
+    control_menu->menuAction()->setText(tr("İleri ve Geri Sarma"));//快进快退
 //    control_menu->menuAction()->setIcon(QPixmap(":/res/speed.png"));
     control_menu->menuAction()->setObjectName("control_menu");
     rewind1Act = new MyAction( Qt::Key_Left, this, "rewind1");
@@ -653,7 +653,7 @@ void BaseGui::createActionsAndMenus() {
     gotoAct = new MyAction( QKeySequence("Ctrl+J"), this, "jump_to");
     connect(gotoAct, SIGNAL(triggered()), this, SLOT(showGotoDialog()));
 //    gotoAct->change( Images::icon("jumpto"), tr("&Atla..."));
-    gotoAct->change(tr("&Jump to..."));
+    gotoAct->change(tr("&Atla..."));
     control_menu->addAction(rewind1Act);
     control_menu->addAction(forward1Act);
     control_menu->addSeparator();
@@ -665,7 +665,7 @@ void BaseGui::createActionsAndMenus() {
     playMenu->addMenu(control_menu);
     // Speed submenu
     speed_menu = new QMenu(this);
-    speed_menu->menuAction()->setText(tr("Çalma Hızı"));
+    speed_menu->menuAction()->setText(tr("Oynatma Hızı"));
 //    speed_menu->menuAction()->setIcon(QPixmap(":/res/speed.png"));
     speed_menu->menuAction()->setObjectName("speed_menu");
     normalSpeedAct = new MyAction(Qt::Key_Backspace, this, "normal_speed");
@@ -718,8 +718,8 @@ void BaseGui::createActionsAndMenus() {
     playNextAct = new MyAction(Qt::Key_Greater, this, "play_next");
     playNextAct->addShortcut(Qt::Key_MediaNext); // MCE remote key
     connect(playNextAct, SIGNAL(triggered()), playlistWidget, SLOT(playNext()));
-    playNextAct->change(tr("Next") );
-    playPrevAct->change(tr("Previous"));
+    playNextAct->change(tr("Sonraki") );
+    playPrevAct->change(tr("Önceki"));
     playNextAct->setIcon(QPixmap(":/res/next_normal.png"));
     playPrevAct->setIcon(QPixmap(":/res/previous_normal.png"));
     playMenu->addAction(playPrevAct);
@@ -743,7 +743,7 @@ void BaseGui::createActionsAndMenus() {
     }
     aspectNoneAct = new MyActionGroupItem(this, aspectGroup, "aspect_none", MediaSettings::AspectNone);
     connect(aspectGroup, SIGNAL(activated(int)), core, SLOT(changeAspectRatio(int)));
-    aspectDetectAct->change(tr("&Auto"));
+    aspectDetectAct->change(tr("&Oto"));
     aspect11Act->change("1&:1");
     aspect32Act->change("&3:2");
     aspect43Act->change("&4:3");
@@ -754,7 +754,7 @@ void BaseGui::createActionsAndMenus() {
     aspect169Act->change("16:&9");
     aspect1610Act->change("1&6:10");
     aspect235Act->change("&2.35:1");
-    aspectNoneAct->change(tr("&Disabled"));
+    aspectNoneAct->change(tr("&Kapalı"));
     // Aspect submenu
     aspect_menu = new QMenu(this);
     aspect_menu->menuAction()->setObjectName("aspect_menu");
@@ -769,21 +769,21 @@ void BaseGui::createActionsAndMenus() {
     rotateCounterclockwiseAct = new MyActionGroupItem(this, rotateGroup, "rotate_counterclockwise", MediaSettings::Counterclockwise);
     rotateCounterclockwiseFlipAct = new MyActionGroupItem(this, rotateGroup, "rotate_counterclockwise_flip", MediaSettings::Counterclockwise_flip);
     connect(rotateGroup, SIGNAL(activated(int)), core, SLOT(changeRotate(int)));
-    rotateNoneAct->change(tr("&Off"));
-    rotateClockwiseFlipAct->change(tr("&Rotate by 90 degrees clockwise and flip"));
-    rotateClockwiseAct->change(tr("Rotate by 90 degrees &clockwise"));
-    rotateCounterclockwiseAct->change(tr("Rotate by 90 degrees counterclock&wise"));
-    rotateCounterclockwiseFlipAct->change(tr("Rotate by 90 degrees counterclockwise and &flip"));
+    rotateNoneAct->change(tr("&Kapalı"));
+    rotateClockwiseFlipAct->change(tr("&Saat yönünde 90 derece döndürün ve çevirin"));
+    rotateClockwiseAct->change(tr("Saat yönünde 90 derece döndürün"));
+    rotateCounterclockwiseAct->change(tr("Saatin ters yönünde 90 derece döndürün"));
+    rotateCounterclockwiseFlipAct->change(tr("Saatin ters yönünde 90 derece döndürün ve çevirin"));
 
     flipAct = new MyAction(this, "flip");
     flipAct->setCheckable(true);
     connect(flipAct, SIGNAL(toggled(bool)), core, SLOT(toggleFlip(bool)));
-    flipAct->change(tr("Fli&p image"));
+    flipAct->change(tr("Çevirme resmi"));
 
     mirrorAct = new MyAction(this, "mirror");
     mirrorAct->setCheckable(true);
     connect(mirrorAct, SIGNAL(toggled(bool)), core, SLOT(toggleMirror(bool)));
-    mirrorAct->change(tr("Mirr&or image"));
+    mirrorAct->change(tr("Ayna resmi"));
 
     // Rotate menu
     rotate_flip_menu = new QMenu(this);
@@ -800,21 +800,21 @@ void BaseGui::createActionsAndMenus() {
 //    shortcutsAct = new MyAction(QKeySequence("Shift+?"), this, "Shortcuts");//快捷键  Qt::Key_Question
 ////    shortcutsAct->addShortcut(QKeySequence("Shift+Ctrl+?"));
 //    connect(shortcutsAct, SIGNAL(triggered()), this, SLOT(showShortcuts()));
-//    shortcutsAct->change(tr("Shortcuts"));
+//    shortcutsAct->change(tr("Kısayollar"));
 
     // Single screenshot
     screenshotAct = new MyAction(Qt::Key_S, this, "screenshot");//屏幕截图
     connect(screenshotAct, SIGNAL(triggered()), core, SLOT(screenshot()));
-    screenshotAct->change(Images::icon("screenshot_normal"), tr("&Ekranresmi"));
+    screenshotAct->change(Images::icon("screenshot_normal"), tr("&Ekran Resmi"));
 
     // On Top
     onTopActionGroup = new MyActionGroup(this);
     onTopAlwaysAct = new MyActionGroupItem(this,onTopActionGroup,"on_top_always",Preferences::AlwaysOnTop);
     onTopNeverAct = new MyActionGroupItem(this,onTopActionGroup,"on_top_never",Preferences::NeverOnTop);
     onTopWhilePlayingAct = new MyActionGroupItem(this,onTopActionGroup,"on_top_playing",Preferences::WhilePlayingOnTop);
-    onTopAlwaysAct->change(tr("&Always"));
-    onTopNeverAct->change(tr("&Never"));
-    onTopWhilePlayingAct->change(tr("While &playing"));
+    onTopAlwaysAct->change(tr("&Herzaman"));
+    onTopNeverAct->change(tr("&Asla"));
+    onTopWhilePlayingAct->change(tr("Oynatırken"));
     connect(onTopActionGroup, SIGNAL(activated(int)), this, SLOT(changeStayOnTop(int)));
     // Ontop submenu
     ontop_menu = new QMenu(this);
@@ -828,9 +828,9 @@ void BaseGui::createActionsAndMenus() {
     orderPlaysAct = new MyActionGroupItem(this,playOrderActionGroup,"order_play",Preferences::OrderPlay);
     randomPlayAct = new MyActionGroupItem(this,playOrderActionGroup,"random_play",Preferences::RandomPlay);
     listLoopPlayAct = new MyActionGroupItem(this,playOrderActionGroup,"list_loop_play",Preferences::ListLoopPlay);
-    orderPlaysAct->change(tr("Order play"));
-    randomPlayAct->change(tr("Random play"));
-    listLoopPlayAct->change(tr("List loop play"));
+    orderPlaysAct->change(tr("Sırayla Oynat"));
+    randomPlayAct->change(tr("Karışık Oynat"));
+    listLoopPlayAct->change(tr("Oynatma Döngü Listesi"));
     connect(playOrderActionGroup, SIGNAL(activated(int)), this, SLOT(changePlayOrder(int)));
     play_order_menu = new QMenu(this);
     play_order_menu->menuAction()->setObjectName("play_order_menu");
@@ -846,7 +846,7 @@ void BaseGui::createActionsAndMenus() {
     channelsFull61Act = new MyActionGroupItem(this, channelsGroup, "channels_ful61", MediaSettings::ChFull61);
     channelsFull71Act = new MyActionGroupItem(this, channelsGroup, "channels_ful71", MediaSettings::ChFull71);
     connect(channelsGroup, SIGNAL(activated(int)), core, SLOT(setAudioChannels(int)));
-    channelsStereoAct->change(tr("&Stereo"));
+    channelsStereoAct->change(tr("&Steryo"));
     channelsSurroundAct->change(tr("&4.0 Surround"));
     channelsFull51Act->change(tr("&5.1 Surround"));
     channelsFull61Act->change(tr("&6.1 Surround"));
@@ -870,19 +870,19 @@ void BaseGui::createActionsAndMenus() {
 
     decVolumeAct = new MyAction(Qt::Key_9, this, "dec_volume");
     connect(decVolumeAct, SIGNAL(triggered()), core, SLOT(decVolume()));
-    decVolumeAct->change(tr("Volume -"));
+    decVolumeAct->change(tr("Ses -"));
     incVolumeAct = new MyAction(Qt::Key_0, this, "inc_volume");
     connect(incVolumeAct, SIGNAL(triggered()), core, SLOT(incVolume()));
-    incVolumeAct->change(tr("Volume +") );
+    incVolumeAct->change(tr("Ses +") );
     decAudioDelayAct = new MyAction(Qt::Key_Minus, this, "dec_audio_delay");
     connect( decAudioDelayAct, SIGNAL(triggered()), core, SLOT(decAudioDelay()));
-    decAudioDelayAct->change(tr("Delay -"));
+    decAudioDelayAct->change(tr("Gecikme -"));
     incAudioDelayAct = new MyAction(Qt::Key_Plus, this, "inc_audio_delay");
     connect(incAudioDelayAct, SIGNAL(triggered()), core, SLOT(incAudioDelay()));
     incAudioDelayAct->change( tr("Gecikme +"));
     audioDelayAct = new MyAction(Qt::Key_Y, this, "audio_delay");
     connect(audioDelayAct, SIGNAL(triggered()), this, SLOT(showAudioDelayDialog()));
-    audioDelayAct->change(tr("Gecikmeyi ayarla..."));
+    audioDelayAct->change(tr("Gecikmeyi Ayarla..."));
 
     // Stereo mode
     stereoGroup = new MyActionGroup(this);
@@ -892,11 +892,11 @@ void BaseGui::createActionsAndMenus() {
     monoAct = new MyActionGroupItem(this, stereoGroup, "mono", MediaSettings::Mono);
     reverseAct = new MyActionGroupItem(this, stereoGroup, "reverse_channels", MediaSettings::Reverse);
     connect(stereoGroup, SIGNAL(activated(int)), core, SLOT(setStereoMode(int)));
-    stereoAct->change(tr("&Stereo"));
-    leftChannelAct->change(tr("&Left channel"));
-    rightChannelAct->change(tr("&Right channel"));
+    stereoAct->change(tr("&Steryo"));
+    leftChannelAct->change(tr("&Sol Kanal"));
+    rightChannelAct->change(tr("&Sağ Kanal"));
     monoAct->change(tr("&Mono"));
-    reverseAct->change(tr("Re&verse"));
+    reverseAct->change(tr("Ters"));
 
     // Stereo mode submenu
     stereomode_menu = new QMenu(this);
@@ -927,17 +927,17 @@ void BaseGui::createActionsAndMenus() {
     subVisibilityAct = new MyAction(Qt::Key_V, this, "subtitle_visibility");
     subVisibilityAct->setCheckable(true);
     connect(subVisibilityAct, SIGNAL(toggled(bool)), core, SLOT(changeSubVisibility(bool)));
-    subVisibilityAct->change(tr("Altyazı görünürlüğü"));
+    subVisibilityAct->change(tr("Altyazı Görünürlüğü"));
     subtitlesMenu->addAction(loadSubsAct);
     subtitlesMenu->addAction(subVisibilityAct);
 
     showPreferencesAct = new MyAction(QKeySequence("Ctrl+P"), this, "show_preferences");
     connect(showPreferencesAct, SIGNAL(triggered()), this, SLOT(showPreferencesDialog()));
-    showPreferencesAct->change(QPixmap(":/res/prefs.png"), tr("Tercihler"));//首选项
+    showPreferencesAct->change(QPixmap(":/res/prefs.png"), tr("Özellikler"));//首选项
 
     showPropertiesAct = new MyAction(QKeySequence("Ctrl+I"), this, "show_file_properties");
     connect(showPropertiesAct, SIGNAL(triggered()), this, SLOT(showFilePropertiesDialog()));
-    showPropertiesAct->change(QPixmap(":/res/info.png"), tr("Bilgileri ve özellikleri görüntüleyin..."));//查看信息和属性
+    showPropertiesAct->change(QPixmap(":/res/info.png"), tr("Bilgileri ve Özellikleri Görüntüle..."));//查看信息和属性
 
     helpAct = new MyAction(QKeySequence("Ctrl+H"), this, "show_help" );
     connect(helpAct, SIGNAL(triggered()), this, SLOT(showHelpDialog()));
@@ -998,7 +998,7 @@ void BaseGui::createTrayActions() {
     action_show->change(Images::icon("open_window_normal"), tr("Anasayfayı Aç"));
 
     action_openshotsdir = new MyAction(this, "open_shots_dir");
-    action_openshotsdir->change(Images::icon("open_screen"), tr("Ekran görüntüleri klasörünü aç"));
+    action_openshotsdir->change(Images::icon("open_screen"), tr("Ekran Resmi Klasörünü Aç"));
 
     connect(action_show, SIGNAL(triggered()), this, SLOT(showAll()));
     connect(action_openshotsdir, SIGNAL(triggered()), this, SLOT(open_screenshot_directory()));
@@ -1021,11 +1021,11 @@ void BaseGui::addTrayActions() {
 
 void BaseGui::createHiddenActions() {
     playlist_action = new MyAction(QKeySequence("F3"), this, "playlist_open_close");
-    playlist_action->change(tr("Çalma Listesi"));
+    playlist_action->change(tr("Oynatma Listesi"));
     connect(playlist_action, SIGNAL(triggered()), this, SLOT(slot_playlist()));
 
     play_pause_aciton = new MyAction(QKeySequence(Qt::Key_Space), this, "play_pause");
-    play_pause_aciton->change(tr("Çal/Bekle"));
+    play_pause_aciton->change(tr("Oynat/Bekle"));
     connect(playlist_action, SIGNAL(triggered()), core, SLOT(play_or_pause()));
 
     stopAct = new MyAction(Qt::Key_MediaStop, this, "stop");
@@ -1684,10 +1684,10 @@ void BaseGui::openFile() {
 
 	Extensions e;
     QString s = MyFileDialog::getOpenFileName(
-                       this, tr("Bir dosya seçin"), pref->latest_dir, 
+                       this, tr("Bir Dosya Seçin"), pref->latest_dir, 
                        tr("Multimedya") + e.allPlayable().forFilter()+";;" +
-                       tr("Video") + e.video().forFilter()+";;" +
-                       tr("Ses") + e.audio().forFilter()+";;" +
+                       tr("Video Dosyası") + e.video().forFilter()+";;" +
+                       tr("Ses Dosyası") + e.audio().forFilter()+";;" +
                        tr("Çalma Listesi") + e.playlist().forFilter()+";;" +
                        tr("Tüm Dosyalar") +" (*.*)" );
     if ( !s.isEmpty() ) {
@@ -1723,7 +1723,7 @@ void BaseGui::openDirectory() {
 	qDebug("BaseGui::openDirectory");
 
 	QString s = MyFileDialog::getExistingDirectory(
-                    this, tr("Bir dizin seçin"),
+                    this, tr("Bir Dizin Seçin"),
                     pref->latest_dir );
 
 	if (!s.isEmpty()) {
@@ -1821,7 +1821,7 @@ void BaseGui::loadSub() {
 
 	Extensions e;
     QString s = MyFileDialog::getOpenFileName(
-        this, tr("Bir dosya seçin"), 
+        this, tr("Bir Dosya Seçin"), 
 	    pref->latest_dir, 
         tr("Altyazılar") + e.subtitles().forFilter()+ ";;" +
         tr("Tüm Dosyalar") +" (*.*)" );
@@ -1842,7 +1842,7 @@ void BaseGui::loadAudioFile() {
 
 	Extensions e;
 	QString s = MyFileDialog::getOpenFileName(
-        this, tr("Bir dosya seçin"), 
+        this, tr("Bir Dosya Seçin"), 
 	    pref->latest_dir, 
         tr("Ses Dosyası") + e.audio().forFilter()+";;" +
         tr("Tüm Dosyalar") +" (*.*)" );
@@ -1880,7 +1880,7 @@ void BaseGui::showHelpDialog() {
 void BaseGui::showGotoDialog() {
     TimeDialog d;
 	d.setLabel(tr("&Atla:"));
-    d.setWindowTitle(tr("Milis Video - Ara"));
+    d.setWindowTitle(tr("Milis Video - Git"));
     d.setMaximumTime((int) core->mdat.duration);
     d.setTime((int) core->mset.current_sec);
     int w_x = this->frameGeometry().topLeft().x() + (this->width() / 2) - (380  / 2);
@@ -1907,11 +1907,11 @@ void BaseGui::showSubDelayDialog() {
 	bool ok;
 	#if QT_VERSION >= 0x050000
     int delay = QInputDialog::getInt(this, tr("Milis Video - Altyazı Gecikmesi"),
-                                     tr("Altyazı gecikmesi (milisaniye):"), core->mset.sub_delay, 
+                                     tr("Altyazı Gecikmesi (milisaniye):"), core->mset.sub_delay, 
                                      -3600000, 3600000, 1, &ok);
 	#else
     int delay = QInputDialog::getInteger(this, tr("Milis Video - Altyazı Gecikmesi"),
-                                         tr("Altyazı gecikmesi (milisaniye):"), core->mset.sub_delay, 
+                                         tr("Altyazı Gecikmesi (milisaniye):"), core->mset.sub_delay, 
                                          -3600000, 3600000, 1, &ok);
 	#endif
 	if (ok) {
@@ -2916,7 +2916,7 @@ void BaseGui::open_screenshot_directory() {
         QDesktopServices::openUrl(QUrl(QString("file:%1").arg(pref->screenshot_directory), QUrl::TolerantMode));
     }
     else {
-        tray->showMessage(tr("Bilgi"), tr("Ekran görüntüsü klasörü yok!"), QSystemTrayIcon::Information, 2000);//QSystemTrayIcon::Warning
+        tray->showMessage(tr("Bilgi"), tr("Ekran resmi klasörü yok!"), QSystemTrayIcon::Information, 2000);//QSystemTrayIcon::Warning
     }
 }
 
